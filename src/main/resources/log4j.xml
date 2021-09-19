@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG" packages="org.apache.logging.log4j.core,io.sentry.log4j2">
+    <Appenders>
+        <RollingFile name="RollingFile" fileName="./logs/suSaludMqServices.log"
+                     filePattern="./logs/suSaludMqServices-%i.log">
+            <PatternLayout pattern="%p [%d{yyyyMMdd HH:mm:ss.SSS}] - %-12C{} -%L - %m%n" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="4 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="9"/>
+        </RollingFile>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%p [suSaludMqServices] [%d{yyyyMMdd HH:mm:ss.SSS}] - %-12C{1} -%L - %m%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="DEBUG">
+            <AppenderRef ref="RollingFile"/>
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
