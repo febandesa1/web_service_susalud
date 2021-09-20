@@ -25,7 +25,9 @@ public class EnvioMqController {
 	@RequestMapping("/info")
 	public ResponseBean sendMqInfoAfiliado(
 
-			@RequestParam(defaultValue = "", name = "idMarca") String idMarca
+			@RequestParam(defaultValue = "", name = "IdRemitente") String IdRemitente,
+			@RequestParam(defaultValue = "", name = "FeTransaccion") String FeTransaccion,
+			@RequestParam(defaultValue = "", name = "HoTransaccion") String HoTransaccion
 
 	) {
 		ResponseBean response = null;
