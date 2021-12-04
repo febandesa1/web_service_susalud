@@ -2,7 +2,9 @@ package pe.com.susalud.susaludMqServices;
 
 import java.util.HashMap;
 
-import pe.com.susalud.conection.ClsConnectionMQ;
+import pe.com.susalud.demoafl.ClsConnectionMQ;
+
+
 
 public class Tester {
 	public void testing() {

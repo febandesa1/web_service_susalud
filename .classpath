@@ -18,15 +18,8 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
-			<attribute name="test" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.7.0_79">
-		<attributes>
-			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
@@ -35,6 +28,15 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/ibmmq"/>
+	<classpathentry kind="lib" path="C:/ROOSVELT/fuentes01/susaludservice/libs/apache-logging-log4j.jar"/>
+	<classpathentry kind="lib" path="C:/ROOSVELT/fuentes01/susaludservice/libs/com.ibm.mq.commonservices.jar"/>
+	<classpathentry kind="lib" path="C:/ROOSVELT/fuentes01/susaludservice/libs/com.ibm.mq.headers.jar"/>
+	<classpathentry kind="lib" path="C:/ROOSVELT/fuentes01/susaludservice/libs/com.ibm.mq.jar"/>
+	<classpathentry kind="lib" path="C:/ROOSVELT/fuentes01/susaludservice/libs/com.ibm.mq.jmqi.jar"/>
+	<classpathentry kind="lib" path="C:/ROOSVELT/fuentes01/susaludservice/libs/com.ibm.mq.pcf.jar"/>
+	<classpathentry kind="lib" path="C:/ROOSVELT/fuentes01/susaludservice/libs/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="C:/ROOSVELT/fuentes01/susaludservice/libs/connector.jar"/>
+	<classpathentry kind="lib" path="C:/ROOSVELT/fuentes01/susaludservice/libs/jr-afiliacion-susalud-1.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/ROOSVELT/fuentes01/susaludservice/libs/substance.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

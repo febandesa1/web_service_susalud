@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pe.com.susalud.mappers.AfiliacionMapper">
+
+ 	<resultMap id="insertSuSaludResult" type="pe.com.susalud.beans.ResponseDataBean">
+            <result property="codigo" column="c_c_envio_susalud" />
+    </resultMap>
+    
+    <resultMap id="insertSuSaludDetalleResult" type="pe.com.susalud.beans.ResponseDataBean">
+            <result property="codigo" column="codigo" />
+    </resultMap>	
+
+    <resultMap id="Ins_tramaX12ParamResult" type="pe.com.susalud.beans.ResponseDataBean">
+            <result property="codigo" column="codigo" />
+    </resultMap>	
+    
+    <resultMap id="selectListarTramaResult" type="pe.com.susalud.afiliacion.entidad.bean.AfiliacionDataDet">
+            <result property="x_trama" column="x_trama" />
+    </resultMap>	
+
+
+    <resultMap id="registrarRespuestaMqResult" type="pe.com.susalud.beans.ResponseDataBean">
+            <result property="codigo" column="codigo" />
+    </resultMap>	
+
+    <resultMap id="registrarTramax12nResult" type="pe.com.susalud.beans.ResponseDataBean">
+            <result property="codigo" column="codigo" />
+    </resultMap>	
+	<!--  -->
+    <resultMap id="selectTramax12nResult" type="pe.com.susalud.beans.TramaBean">
+            <result property="xmlTramax12" column="c_t_xml_envio" />
+    </resultMap>	
+
+    
+    <resultMap id="procesaBajaAfiliacionSuSaludResult" type="pe.com.susalud.afiliacion.entidad.bean.Afiliacion">
+  			<result property="IdRemitente" column="IdRemitente"/>
+            <result property="FeTransaccion" column="FeTransaccion"/>
+            <result property="HoTransaccion" column="HoTransaccion"/>
+            <result property="TiOperacion" column="TiOperacion"/>
+
+                   <result property="ApPaternoAfiliado" column="ApPaternoAfiliado"/>
+                   <result property="NoAfiliado1" column="NoAfiliado1"/>
+                   <result property="NoAfiliado2" column="NoAfiliado2"/>                   
+                   <result property="ApMaternoAfiliado" column="ApMaternoAfiliado"/> 
+                   <result property="TiDocumentoAfil" column="TiDocumentoAfil"/> 
+                   <result property="NuDocumentoAfil" column="NuDocumentoAfil"/> 
+                   <result property="EstadoAfiliado" column="EstadoAfiliado"/> 
+                   <result property="TiDocumentoAct" column="TiDocumentoAct"/> 
+                   <result property="NuDocumentoAct" column="NuDocumentoAct"/> 
+                   <result property="ApCasadaAfiliado" column="ApCasadaAfiliado"/> 
+                   <result property="CoNacionalidad" column="CoNacionalidad"/> 
+                   <result property="Ubigeo" column="Ubigeo"/>                
+                   <result property="FeNacimiento" column="FeNacimiento"/> 
+                   <result property="Genero" column="Genero"/> 
+                   <result property="CoPaisDoc" column="CoPaisDoc"/> 
+                   <result property="FeFallecimiento" column="FeFallecimiento"/> 
+                   <result property="CoPaisEmisorDocAct" column="CoPaisEmisorDocAct"/> 
+                   <result property="FeActPersonaxIafas" column="FeActPersonaxIafas"/> 
+                   <result property="IdAfiliadoNombre" column="IdAfiliadoNombre"/> 
+
+                   <result property="TiDocTutor" column="TiDocTutor"/> 
+                   <result property="NuDocTutor" column="NuDocTutor"/> 
+                   <result property="TiVinculoTutor" column="TiVinculoTutor"/> 
+                   <result property="FeValidacionReniec" column="FeValidacionReniec"/> 
+                   <result property="CoPaisEmisorDocTutor" column="CoPaisEmisorDocTutor"/> 
+                   <result property="TiDocTitular" column="TiDocTitular"/> 
+                   <result property="NuDocTitular" column="NuDocTitular"/> 
+                   <result property="FeNacimientoTitular" column="FeNacimientoTitular"/> 
+
+                   <result property="CoPaisEmisorDocTitular" column="CoPaisEmisorDocTitular"/> 
+                   <result property="TiContratante" column="TiContratante"/> 
+                   <result property="ApPaternoContratante" column="ApPaternoContratante"/> 
+                   <result property="NoContratante1" column="NoContratante1"/> 
+                   <result property="NoContratante2" column="NoContratante2"/> 
+                   <result property="NoContratante3" column="NoContratante3"/> 
+                   <result property="NoContratante4" column="NoContratante4"/> 
+                   <result property="ApMaternoContratante" column="ApMaternoContratante"/> 
+                   <result property="TiDocContratante" column="TiDocContratante"/> 
+                   <result property="NuDocContratante" column="NuDocContratante"/> 
+                   <result property="ApCasadaContratante" column="ApCasadaContratante"/> 
+                   <result property="FeNacimientoContratante" column="FeNacimientoContratante"/> 
+                   <result property="CoPaisEmisorDocContratante" column="CoPaisEmisorDocContratante"/> 
+                   <result property="CoAfiliacion" column="CoAfiliacion"/> 
+                   <result property="CoContrato" column="CoContrato"/> 
+                   
+                   <result property="CoUnicoMultisectorial" column="CoUnicoMultisectorial"/> 
+                   <result property="TiRegimen" column="TiRegimen"/> 
+                   <result property="EsAfiliacion" column="EsAfiliacion"/> 
+                   <result property="CoCausalBaja" column="CoCausalBaja"/> 
+                   <result property="TiPlanSalud" column="TiPlanSalud"/> 
+                   <result property="NoProductoSalud" column="NoProductoSalud"/> 
+                   <result property="CoProducto" column="CoProducto"/> 
+                   <result property="Parentesco" column="Parentesco"/> 
+                   <result property="CoRenipress" column="CoRenipress"/> 
+                   <result property="PkAfiliado" column="PkAfiliado"/> 
+                   <result property="FeActEstado" column="FeActEstado"/> 
+                   <result property="FeIniAfiliacion" column="FeIniAfiliacion"/> 
+                   <result property="FeFinAfiliacion" column="FeFinAfiliacion"/> 
+                   <result property="FeIniCobertura" column="FeIniCobertura"/> 
+                   <result property="FeFinCobertura" column="FeFinCobertura"/> 
+                   <result property="FeActOperacion" column="FeActOperacion"/> 
+                   <result property="TiActOperacion" column="TiActOperacion"/> 
+                   <result property="CoTiCobertura" column="CoTiCobertura"/> 
+                   <result property="IdAfiliacionNombre" column="IdAfiliacionNombre"/>
+                   <result property="codAfiliado" column="IdAfiliado"/>
+                   <!-- ObjA.setApCasadaAfiliado("");-->                      
+    </resultMap>
+    
+    <resultMap id="procesaAltaAfiliacionSuSaludResult" type="pe.com.susalud.afiliacion.entidad.bean.Afiliacion">
+      			<result property="IdRemitente" column="IdRemitente"/>
+            <result property="FeTransaccion" column="FeTransaccion"/>
+            <result property="HoTransaccion" column="HoTransaccion"/>
+            <result property="TiOperacion" column="TiOperacion"/>
+
+                   <result property="ApPaternoAfiliado" column="ApPaternoAfiliado"/>
+                   <result property="NoAfiliado1" column="NoAfiliado1"/>
+                   <result property="NoAfiliado2" column="NoAfiliado2"/>                   
+                   <result property="ApMaternoAfiliado" column="ApMaternoAfiliado"/> 
+                   <result property="TiDocumentoAfil" column="TiDocumentoAfil"/> 
+                   <result property="NuDocumentoAfil" column="NuDocumentoAfil"/> 
+                   <result property="EstadoAfiliado" column="EstadoAfiliado"/> 
+                   <result property="TiDocumentoAct" column="TiDocumentoAct"/> 
+                   <result property="NuDocumentoAct" column="NuDocumentoAct"/> 
+                   <result property="ApCasadaAfiliado" column="ApCasadaAfiliado"/> 
+                   <result property="CoNacionalidad" column="CoNacionalidad"/> 
+                   <result property="Ubigeo" column="Ubigeo"/>                
+                   <result property="FeNacimiento" column="FeNacimiento"/> 
+                   <result property="Genero" column="Genero"/> 
+                   <result property="CoPaisDoc" column="CoPaisDoc"/> 
+                   <result property="FeFallecimiento" column="FeFallecimiento"/> 
+                   <result property="CoPaisEmisorDocAct" column="CoPaisEmisorDocAct"/> 
+                   <result property="FeActPersonaxIafas" column="FeActPersonaxIafas"/> 
+                   <result property="IdAfiliadoNombre" column="IdAfiliadoNombre"/> 
+
+                   <result property="TiDocTutor" column="TiDocTutor"/> 
+                   <result property="NuDocTutor" column="NuDocTutor"/> 
+                   <result property="TiVinculoTutor" column="TiVinculoTutor"/> 
+                   <result property="FeValidacionReniec" column="FeValidacionReniec"/> 
+                   <result property="CoPaisEmisorDocTutor" column="CoPaisEmisorDocTutor"/> 
+                   <result property="TiDocTitular" column="TiDocTitular"/> 
+                   <result property="NuDocTitular" column="NuDocTitular"/> 
+                   <result property="FeNacimientoTitular" column="FeNacimientoTitular"/> 
+
+                   <result property="CoPaisEmisorDocTitular" column="CoPaisEmisorDocTitular"/> 
+                   <result property="TiContratante" column="TiContratante"/> 
+                   <result property="ApPaternoContratante" column="ApPaternoContratante"/> 
+                   <result property="NoContratante1" column="NoContratante1"/> 
+                   <result property="NoContratante2" column="NoContratante2"/> 
+                   <result property="NoContratante3" column="NoContratante3"/> 
+                   <result property="NoContratante4" column="NoContratante4"/> 
+                   <result property="ApMaternoContratante" column="ApMaternoContratante"/> 
+                   <result property="TiDocContratante" column="TiDocContratante"/> 
+                   <result property="NuDocContratante" column="NuDocContratante"/> 
+                   <result property="ApCasadaContratante" column="ApCasadaContratante"/> 
+                   <result property="FeNacimientoContratante" column="FeNacimientoContratante"/> 
+                   <result property="CoPaisEmisorDocContratante" column="CoPaisEmisorDocContratante"/> 
+                   <result property="CoAfiliacion" column="CoAfiliacion"/> 
+                   <result property="CoContrato" column="CoContrato"/> 
+                   
+                   <result property="CoUnicoMultisectorial" column="CoUnicoMultisectorial"/> 
+                   <result property="TiRegimen" column="TiRegimen"/> 
+                   <result property="EsAfiliacion" column="EsAfiliacion"/> 
+                   <result property="CoCausalBaja" column="CoCausalBaja"/> 
+                   <result property="TiPlanSalud" column="TiPlanSalud"/> 
+                   <result property="NoProductoSalud" column="NoProductoSalud"/> 
+                   <result property="CoProducto" column="CoProducto"/> 
+                   <result property="Parentesco" column="Parentesco"/> 
+                   <result property="CoRenipress" column="CoRenipress"/> 
+                   <result property="PkAfiliado" column="PkAfiliado"/> 
+                   <result property="FeActEstado" column="FeActEstado"/> 
+                   <result property="FeIniAfiliacion" column="FeIniAfiliacion"/> 
+                   <result property="FeFinAfiliacion" column="FeFinAfiliacion"/> 
+                   <result property="FeIniCobertura" column="FeIniCobertura"/> 
+                   <result property="FeFinCobertura" column="FeFinCobertura"/> 
+                   <result property="FeActOperacion" column="FeActOperacion"/> 
+                   <result property="TiActOperacion" column="TiActOperacion"/> 
+                   <result property="CoTiCobertura" column="CoTiCobertura"/> 
+                   <result property="IdAfiliacionNombre" column="IdAfiliacionNombre"/>
+                   <result property="codAfiliado" column="IdAfiliado"/>
+    
+    </resultMap>
+	
+	<select id="insertSuSalud" resultMap="insertSuSaludResult">
+		DECLARE @c_c_envio_susalud CHAR(10)
+		EXEC [dbo].[SP_INSERT_TB_ENVIO_SUSALUD] 
+		#{c_tipo},
+		#{c_c_usuario},
+		#{n_i_cantidad},
+		@c_c_envio_susalud OUTPUT
+		;
+		SELECT @c_c_envio_susalud AS c_c_envio_susalud
+	</select>
+
+	<select id="insertSuSaludDetalle"
+		resultMap="insertSuSaludDetalleResult">
+		{ CALL [dbo].[SP_INSERT_TB_ENVIO_SUSALUD_DET] (
+		#{codEnvioSusalud},
+		#{c_c_afiliado}, 
+		#{n_dni} 
+		)}
+		SELECT '1' AS codigo
+	</select>
+	
+	<select id="procesaBajaAfiliacionSuSalud" resultMap="procesaBajaAfiliacionSuSaludResult">
+	
+		EXEC [dbo].[sp_afiliados_lineambatch_prm_bajas] 
+		#{codigo}
+		;
+		
+	</select>
+	
+	<select id="procesaAltaAfiliacionSuSalud" resultMap="procesaAltaAfiliacionSuSaludResult">
+		
+		EXEC [dbo].[sp_afiliados_lineambatch_prm] 
+		#{codigo}
+		;
+	
+	</select>	
+	
+	<select id="Ins_tramaX12Param" resultMap="Ins_tramaX12ParamResult">	
+		EXEC [dbo].[sp_ins_tramax12_susalud]
+		#{susaludTrama},
+		#{id}, 
+		#{codAfi} 
+		;
+		SELECT '1' AS codigo
+	</select>
+	
+	<select id="selectListarTrama" resultMap="selectListarTramaResult">	
+		SELECT
+			x_trama 
+		FROM 
+		TB_TRAMAX12_SUSALUD 
+			WHERE 
+			C_C_ID = #{codEnvioSalud}
+	</select>
+	
+	<select id="registrarRespuestaMq" resultMap="registrarRespuestaMqResult">	
+		EXEC [dbo].[sp_ins_response_mq_susalud]
+		#{idTransaccion},
+		#{feTransaccion},
+		#{hoTransaccion}, 
+		#{idCorrelativo},
+		#{idReceptor}, 
+		#{idRemitente}, 
+		#{nuControl}, 
+		#{nuControlST},
+		#{idSolicitud},
+		#{dni},
+		#{codAfiliado},
+		#{xmlEnvio}
+		  
+		;
+		SELECT '1' AS codigo
+	</select>
+	
+	<select id="registrarTramax12n" resultMap="registrarTramax12nResult">	
+		EXEC [dbo].[sp_ins_trama_xml_susalud]
+		#{idSolicitud},
+		#{codAfiliado},
+		#{dni}, 
+		#{x12n}
+		  
+		;
+		SELECT '1' AS codigo
+	</select>
+	
+		
+	<select id="selectTramax12n" resultMap="selectTramax12nResult">	
+	
+		SELECT
+			 c_t_xml_envio 
+		FROM 
+		TB_GEN_TRAMA_AFIL_XML with (nolock) 
+		WHERE c_c_id_solicitud = #{idSolicitud}
+	
+	</select>		
+		
+</mapper>
+
+

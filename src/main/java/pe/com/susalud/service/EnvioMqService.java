@@ -2,13 +2,16 @@ package pe.com.susalud.service;
 
 import pe.com.susalud.beans.AfiliadoRequestPayloadBean;
 import pe.com.susalud.beans.ResponseBean;
+import pe.com.susalud.beans.ResponseMqBean;
 
 public interface EnvioMqService {
-	ResponseBean sendMqInfoAfiliado(AfiliadoRequestPayloadBean afiliadoBean);
 
-	ResponseBean cargarDatosAfiliado(AfiliadoRequestPayloadBean afiliadoBean);
+	ResponseMqBean sendMqInfoAfiliado(AfiliadoRequestPayloadBean afiliadoBean);
+	
+	ResponseMqBean generaTramaInfoAfiliado(AfiliadoRequestPayloadBean afiliadoBean);
+	
+	ResponseMqBean enviaTramaInfoAfiliado(AfiliadoRequestPayloadBean afiliadoBean);
+	
+	ResponseBean sendMqInfoAfiliadoTest(AfiliadoRequestPayloadBean afiliadoBean);
 
-	ResponseBean enviarDatosAfiliado(AfiliadoRequestPayloadBean afiliadoBean);
-
-	Boolean validarTrama(String trama);
 }

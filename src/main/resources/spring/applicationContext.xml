@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd    
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/task
+		http://www.springframework.org/schema/task/spring-task.xsd
+		http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/mvc
+      	http://www.springframework.org/schema/mvc/spring-mvc.xsd
+   ">
+	<!--  
+	<context:component-scan
+		base-package="pe.com.susalud" />
+
+	<task:annotation-driven />
+	<mvc:annotation-driven />
+	-->
+	<!--  
+	<util:properties id="propertyConfigurer"
+		location="file:/DATA/properties/susalud/application.properties" />
+
+	<context:property-placeholder
+		properties-ref="propertyConfigurer" />
+	-->
+	<!--  
+	<bean id="jsonConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name="supportedMediaTypes" value="application/json" />
+	</bean>
+	-->
+
+	<!-- Jboss config developer -->
+	<!-- <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> 
+		<property name="jndiName" value="java:/sqlcop04" /> <property name="lookupOnStartup" 
+		value="true" /> <property name="cache" value="true" /> <property name="proxyInterface" 
+		value="javax.sql.DataSource" /> </bean> <bean id="dataSource2" class="org.springframework.jndi.JndiObjectFactoryBean"> 
+		<property name="jndiName" value="java:/bombas" /> <property name="lookupOnStartup" 
+		value="true" /> <property name="cache" value="true" /> <property name="proxyInterface" 
+		value="javax.sql.DataSource" /> </bean> <bean id="dataSource3" class="org.springframework.jndi.JndiObjectFactoryBean"> 
+		<property name="jndiName" value="java:/toat" /> <property name="lookupOnStartup" 
+		value="true" /> <property name="cache" value="true" /> <property name="proxyInterface" 
+		value="javax.sql.DataSource" /> </bean> <bean id="dataSource4" class="org.springframework.jndi.JndiObjectFactoryBean"> 
+		<property name="jndiName" value="java:/cmdseries" /> <property name="lookupOnStartup" 
+		value="true" /> <property name="cache" value="true" /> <property name="proxyInterface" 
+		value="javax.sql.DataSource" /> </bean> -->
+
+	<!-- <property name="jndiName" value="jdbc/SQLCOP04CMX" /> -->
+	<!-- <property name="jndiName" value="jdbc/TOATVMX" /> -->
+
+
+	<bean id="dataSource"
+		class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:/suSalud" />
+		<property name="lookupOnStartup" value="true" />
+		<property name="cache" value="true" />
+		<property name="proxyInterface" value="javax.sql.DataSource" />
+	</bean>
+
+
+	<!--FACTORY DATASOURCE SUSALUD -->
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="mapperLocations"
+			value="classpath*:com/susalud/mappers/*.xml" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="typeAliasesPackage" value="pe.com.susalud" />
+	</bean>
+
+
+	<bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
+
+
+</beans>
+
+

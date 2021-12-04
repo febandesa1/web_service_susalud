@@ -14,7 +14,6 @@
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
 		<java.version>1.7</java.version>
 		<skipTests>true</skipTests>
-		<!-- servlet/jsp/EL (3.0/2.2/2.2),(3.1/2.3/3.0) -->
 		<javaee-api.version>7.0</javaee-api.version>
 		<servlet-api.version>3.1.0</servlet-api.version>
 		<jsp-api.version>2.3.1</jsp-api.version>
@@ -22,38 +21,59 @@
 	</properties>
 
 
-
+	<repositories>
+		<repository>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>https://repo.maven.apache.org/maven2</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>5.1.13.RELEASE</version>
+			<version>4.3.15.RELEASE</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>5.1.13.RELEASE</version>
+			<version>4.3.15.RELEASE</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>5.1.13.RELEASE</version>
+			<version>4.3.15.RELEASE</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>5.1.13.RELEASE</version>
+			<version>4.3.15.RELEASE</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>4.3.15.RELEASE</version>
+		</dependency>
 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>4.3.15.RELEASE</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -65,11 +85,13 @@
 			<artifactId>log4j-core</artifactId>
 			<version>2.12.1</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-web</artifactId>
 			<version>2.12.1</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-1.2-api</artifactId>
@@ -90,6 +112,97 @@
 			<version>1.10</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ibm.mq</groupId>
+			<artifactId>com.ibm.mq</artifactId>
+			<version>1.1.0</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ibm.mq</groupId>
+			<artifactId>com.ibm.mq.commonservices</artifactId>
+			<version>1.1.0</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ibm.mq</groupId>
+			<artifactId>com.ibm.mq.headers</artifactId>
+			<version>1.1.0</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ibm.mq</groupId>
+			<artifactId>com.ibm.mq.jmqi</artifactId>
+			<version>1.1.0</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ibm.mq</groupId>
+			<artifactId>com.ibm.mq.pcf</artifactId>
+			<version>1.1.0</version>
+			<scope>compile</scope>
+		</dependency> 
+
+		<dependency>
+			<groupId>javax.resource</groupId>
+			<artifactId>connector</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>pe.gob.susalud.jr.transaccion.susalud</groupId>
+			<artifactId>jr-afiliacion-susalud</artifactId>
+			<scope>compile</scope>
+			<version>1.0.0</version>
+		</dependency> 
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.4</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.9.4</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.9.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+			<version>3.2.17.RELEASE</version>
+		</dependency>
+
+
+		<!--
 		<dependency>
 			<groupId>com.ibm.mq</groupId>
 			<artifactId>mq</artifactId>
@@ -97,7 +210,6 @@
 			<scope>system</scope>
 			<systemPath>${project.basedir}/libs/com.ibm.mq.jar</systemPath>
 		</dependency>
-
 		<dependency>
 			<groupId>com.ibm.mq</groupId>
 			<artifactId>commonservices</artifactId>
@@ -105,8 +217,6 @@
 			<scope>system</scope>
 			<systemPath>${project.basedir}/libs/com.ibm.mq.commonservices.jar</systemPath>
 		</dependency>
-
-
 		<dependency>
 			<groupId>com.ibm.mq</groupId>
 			<artifactId>headers</artifactId>
@@ -114,7 +224,6 @@
 			<scope>system</scope>
 			<systemPath>${project.basedir}/libs/com.ibm.mq.headers.jar</systemPath>
 		</dependency>
-
 		<dependency>
 			<groupId>com.ibm.mq</groupId>
 			<artifactId>jmqi</artifactId>
@@ -122,8 +231,6 @@
 			<scope>system</scope>
 			<systemPath>${project.basedir}/libs/com.ibm.mq.jmqi.jar</systemPath>
 		</dependency>
-
-
 		<dependency>
 			<groupId>com.ibm.mq</groupId>
 			<artifactId>pcf</artifactId>
@@ -131,7 +238,6 @@
 			<scope>system</scope>
 			<systemPath>${project.basedir}/libs/com.ibm.mq.pcf.jar</systemPath>
 		</dependency>
-
 		<dependency>
 			<groupId>connector</groupId>
 			<artifactId>connector</artifactId>
@@ -139,34 +245,36 @@
 			<scope>system</scope>
 			<systemPath>${project.basedir}/libs/connector.jar</systemPath>
 		</dependency>
-
-
 		<dependency>
 			<groupId>afiliciacion-susalud</groupId>
 			<artifactId>jr-afiliacion-susalud</artifactId>
-			<version>1.1.0</version>
+			<version>1.0.0</version>
 			<scope>system</scope>
 			<systemPath>${project.basedir}/libs/jr-afiliacion-susalud-1.0.0.jar</systemPath>
 			<optional>true</optional>
 		</dependency>
-
-
+		-->
 	</dependencies>
 
-	<repositories>
-
-		<repository>
-			<id>in-project</id>
-			<name>In Project Repo</name>
-			<url>file://${project.basedir}/libs</url>
-		</repository>
-
-	</repositories>
+	<!-- <repositories> <repository> <id>in-project</id> <name>In Project Repo</name> 
+		<url>file://${project.basedir}/libs</url> </repository> </repositories> -->
 
 	<build>
+
 		<finalName>susaludMqServices</finalName>
 
+		<!-- <resources> <resource> <directory>src/main/resources</directory> <targetPath>${project.build.directory}</targetPath> 
+			<includes> <include>log4j2.xml</include> </includes> </resource> </resources> -->
+
 		<plugins>
+
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>

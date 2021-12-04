@@ -1,4 +1,6 @@
-package pe.com.susalud.core.beans;
+package pe.com.susalud.afiliacion.trama;
+
+
 
 import java.util.Vector;
 
@@ -113,4 +115,7 @@ public class Trama271Bean {
 	public void setDato(In271RegafiUpdate dato) {
 		this.dato = dato;
 	}
+
+	
+	
 }

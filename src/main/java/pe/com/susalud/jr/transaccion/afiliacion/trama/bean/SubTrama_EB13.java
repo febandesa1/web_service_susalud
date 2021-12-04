@@ -1,4 +1,4 @@
-/*     */ package  pe.com.susalud.afiliacion.transaccion.trama.bean;
+/*     */ package  pe.com.susalud.jr.transaccion.afiliacion.trama.bean;
 /*     */ 
 /*     */ 
 /*     */ 

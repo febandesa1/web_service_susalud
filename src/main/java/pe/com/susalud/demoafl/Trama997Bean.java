@@ -1,4 +1,4 @@
-package pe.com.susalud.core.beans;
+package pe.com.susalud.demoafl;
 
 import java.util.Vector;
 
@@ -114,4 +114,7 @@ public class Trama997Bean {
 	public void setDato(In997RegafiUpdate dato) {
 		this.dato = dato;
 	}
+
+	
+	
 }

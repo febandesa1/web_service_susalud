@@ -13,9 +13,15 @@ import java.util.Vector;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import pe.com.susalud.conection.ClsConnectionMQ;
-import pe.com.susalud.core.beans.Trama271Bean;
-import pe.com.susalud.core.beans.Trama997Bean;
+import pe.com.susalud.demoafl.ClsConnectionMQ;
+//import pe.com.susalud.conection.ClsConnectionMQ;
+import pe.com.susalud.demoafl.Trama271Bean;
+import pe.com.susalud.demoafl.Trama997Bean;
+
+//import pe.com.susalud.afiliacion.trama.Trama271Bean;
+//import pe.com.susalud.afiliacion.trama.Trama997Bean;
+//import pe.com.susalud.conection.ClsConnectionMQ;
+
 import pe.gob.susalud.jr.transaccion.susalud.bean.In271RegafiUpdate;
 import pe.gob.susalud.jr.transaccion.susalud.bean.In271RegafiUpdateAfiliacion;
 import pe.gob.susalud.jr.transaccion.susalud.bean.In271RegafiUpdateAfiliado;
@@ -336,7 +342,7 @@ public class AfiliacionUtil {
 				leerArchivoCSV(ERROR_DESCRIPCION_CSV, mapErrorDescripcion);
 			}
 
-			LOGGER.info("==========START CONNECTION MQ=========");
+			LOGGER.info("==========START CONNECTION MQ2=========");
 			ClsConnectionMQ cnxmq = new ClsConnectionMQ();
 			HashMap<String, String> haspmap = cnxmq.SendMessageSyn(trama);
 			LOGGER.info("==========END CONNECTION MQ===========");
